@@ -1,36 +1,42 @@
-import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
+import EmailSection from "@/components/home/email_section";
+import FaqSection from "@/components/home/faq_section";
+import MoreReasonsSection from "@/components/home/more_reasons_section";
+import NetflixAdsSection from "@/components/home/neflix_ads_section";
+import TrendingSection from "@/components/home/trending_section";
 
-export function Home(){
-    return (
-        <div className="flex min-h-screen items-center flex-row bg-zinc-50 font-sans dark:bg-black">
-            <main className="flex w-full flex-1 flex-col items-center justify-center bg-white px-6 py-24 dark:bg-black sm:py-32">
-            <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-                <p>
-                    Unlimited movies, TV 
-                    shows, and more
-                </p>
-            </h1>
-            <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-                <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                    Starts at KRW 7,000. Cancel anytime.
-                </p>
-            </div>
-            <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-                <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                    Ready to watch? Enter your email to create or restart membership.
-                </p>
-            </div>
-            <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-                <div>
-                    <input type="text" placeholder="Email address" className="rounded-sm px-4 py-2 text-black" />
-                    <Button className="h-12 w-full items-center justify-center gap-2 rounded-sm bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]">
-                        Get Started
-                    </Button>
-                </div>
-            </div>
-            </main>
+export default function Home() {
+  return (
+    <div className="min-h-screen w-full bg-zinc-50 font-sans dark:bg-black">
 
+      <section className="flex min-h-screen w-full flex-col items-center justify-center gap-8 px-6 text-center">
+        <h1 className="max-w-screen-lg text-4xl font-bold tracking-tight text-black dark:text-zinc-50 sm:text-6xl">
+          Unlimited movies, TV
+          <br />
+          shows, and more
+        </h1>
 
+        <div className="flex flex-col gap-4">
+          <p className="text-center text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Starts at KRW 7,000. Cancel anytime.
+          </p>
+          <p className="text-center text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Ready to watch? Enter your email to create or restart membership.
+          </p>
         </div>
-    );
+
+        <EmailSection />
+      </section>
+
+      <main className="flex w-full flex-col">
+        <NetflixAdsSection />
+        <TrendingSection />
+        <MoreReasonsSection />
+        <FaqSection />
+        <EmailSection />
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
