@@ -9,6 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/dist/client/link";
 import Image from "next/image";
 
 export function Navbar() {
@@ -42,9 +43,11 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
+        <Link href="/login">
           <Button className="rounded bg-red-600 px-4 py-1 text-xs text-white hover:bg-red-700 sm:text-sm">
             Sign In
           </Button>
+          </Link>
         </div>
       </div>
     </nav>
